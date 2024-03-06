@@ -17,10 +17,18 @@ def main():
                 header = input("Enter Header of the Task ")
                 description = input("Enter Description of the Task ")
                 toDOList.add_task(header,description)
-            if(choice) == 3:
+            elif(choice) == 2:
+                name = input("Enter name of the Task which You want to mark as completed ")
+                toDOList.UpdateTask(name)
+            elif(choice) == 3:
                 toDOList.PrintList()
+            elif(choice) == 4 :
+                print("Existing From Program Thank You ")
+                break
+            else:
+                print("Invalid choice. Please choose a valid option.")
         except Exception as e:
-            print(f"Error on Main{e}")
+            print(f"Invalid input. Please enter a number {e}")
     
 
 if __name__ =="__main__":

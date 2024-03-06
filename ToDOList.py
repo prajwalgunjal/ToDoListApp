@@ -21,7 +21,15 @@ class TODoList:
                 print(item)
         except Exception as e:
             print(f"Exception While Printing List")
-
-
+    def UpdateTask(self,name):
+        try:
+            task = Task()
+            for item in self.ListOFtasks:
+                if(item.header == name):
+                    item.is_completed = True
+                    print("Task Marked Completed successfully")
+                    break
+        except Exception as e:
+            print(f"Exception While Updating Task {e}")
     def __init__(self):
         self.ListOFtasks = []
