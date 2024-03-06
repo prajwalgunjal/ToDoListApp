@@ -17,6 +17,8 @@ class TODoList:
     def PrintList(self):
         try:
             task = Task()
+            if not self.ListOFtasks:
+                print("No tasks available.")
             for item in self.ListOFtasks:
                 print(item)
         except Exception as e:
