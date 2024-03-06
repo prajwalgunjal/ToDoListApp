@@ -12,14 +12,13 @@ def main():
             print('2. Mark Task as Complete')
             print('3. Display Tasks')
             print('4. Quit')
-            choice = input("Enter Your Choice:- ")
-            if(choice) == '1':
+            choice = int(input("Enter Your Choice:- "))
+            if(choice) == 1:
                 header = input("Enter Header of the Task ")
                 description = input("Enter Description of the Task ")
-                task = Task()
-                task.header = header
-                task.description = description
-                print(task.__dict__)
+                toDOList.add_task(header,description)
+            if(choice) == 3:
+                toDOList.PrintList()
         except Exception as e:
             print(f"Error on Main{e}")
     
