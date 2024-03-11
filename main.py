@@ -17,6 +17,7 @@ def main():
                 header = input("Enter Header of the Task ")
                 description = input("Enter Description of the Task ")
                 toDOList.add_task(header,description)
+                toDOList.save_json()
             elif(choice) == 2:
                 name = input("Enter name of the Task which You want to mark as completed ")
                 toDOList.UpdateTask(name)
