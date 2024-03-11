@@ -34,10 +34,19 @@ class TODoList:
             print(f"Exception While Printing List")
     def UpdateTask(self,name):
         try:
+            file_path = r'D:\PythonProjects\ToDOList\Task.json'
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                for task_data in data:
+                    task = Task(**task_data)
+                    self.ListOFtasks.append(task)
             for item in self.ListOFtasks:
                 if(item.header == name):
                     item.is_completed = True
                     print("Task Marked Completed successfully")
+                    contacts_as_dict = [task.to_dict() for task in self.ListOFtasks]
+                    with open(file_path, 'w') as json_file:
+                        json.dump(contacts_as_dict, json_file, indent=2)
                     break
         except Exception as e:
             print(f"Exception While Updating Task {e}")
