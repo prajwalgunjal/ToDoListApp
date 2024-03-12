@@ -4,6 +4,7 @@ from Task import Task
 
 def main():
     toDOList = TODoList()
+    toDOList.GetList()
     #task = Task()
     while True:
         try:
